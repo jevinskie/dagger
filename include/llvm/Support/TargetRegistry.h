@@ -500,6 +500,8 @@ namespace llvm {
     createDCRegisterSema(StringRef TT,
                          const MCRegisterInfo &MRI,
                          const MCInstrInfo &MII) const {
+      if (!DCRegisterSemaCtorFn)
+        return 0;
       return DCRegisterSemaCtorFn(TT, MRI, MII);
     }
 
@@ -511,6 +513,8 @@ namespace llvm {
                       DCRegisterSema &DRS,
                       const MCRegisterInfo &MRI,
                       const MCInstrInfo &MII) const {
+      if (!DCInstrSemaCtorFn)
+        return 0;
       return DCInstrSemaCtorFn(TT, DRS, MRI, MII);
     }
 
