@@ -236,6 +236,7 @@ For API clients and LLVM developers.
    NVPTXUsage
    StackMaps
    InAlloca
+   SemanticsEmitterTableGen
 
 :doc:`WritingAnLLVMPass`
    Information on how to write LLVM transformations and analyses.
@@ -313,6 +314,10 @@ For API clients and LLVM developers.
 :doc:`StackMaps`
   LLVM support for mapping instruction addresses to the location of
   values and allowing code to be patched.
+
+:doc:`SemanticsEmitterTableGen`
+   This document describes the SemanticsEmitter TableGen backend used to
+   translate MCInst's to IR.
 
 Development Process Documentation
 =================================
