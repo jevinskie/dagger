@@ -25,6 +25,7 @@
 #include <cctype>
 using namespace llvm;
 
+#define PRINT_MACHINE_OPERAND
 #include "X86GenAsmWriter1.inc"
 
 void X86IntelInstPrinter::printRegName(raw_ostream &OS, unsigned RegNo) const {
