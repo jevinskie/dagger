@@ -1,6 +1,7 @@
 #ifndef DCREGISTERSEMA_H
 #define DCREGISTERSEMA_H
 
+#include "llvm/ADT/OwningPtr.h"
 #include "llvm/Support/Compiler.h"
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/NoFolder.h"
@@ -64,8 +65,8 @@ protected:
   Module *TheModule;
   LLVMContext *Ctx;
   StructType *RegSetType;
-  typedef IRBuilder<true, NoFolder> IRBuilder;
-  IRBuilder *Builder;
+  typedef IRBuilder<true, NoFolder> DCIRBuilder;
+  OwningPtr<DCIRBuilder> Builder;
 
   // Valid only inside a Function.
   std::vector<Value *> RegPtrs;

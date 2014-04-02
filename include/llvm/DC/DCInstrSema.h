@@ -80,8 +80,8 @@ protected:
   // FIXME: This should be integrated with MCAtoms
   uint64_t BBStartAddr;
   uint64_t BBEndAddr;
-  typedef IRBuilder<true, NoFolder> IRBuilder;
-  OwningPtr<IRBuilder> Builder;
+  typedef IRBuilder<true, NoFolder> DCIRBuilder;
+  OwningPtr<DCIRBuilder> Builder;
 
   // translation vars.
   unsigned Idx;
