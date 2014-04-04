@@ -106,6 +106,12 @@ defm : Sema_BinOpAI<"AND", and>;
 defm : Sema_BinOpAI<"XOR", xor>;
 defm : Sema_BinOpAI<"OR", or>;
 
+// (ix 1) what should x be?
+def : Semantics<SHL8r1,  [(set (i8 GR8:$dst),   (shl (i8 GR8:$src1),   (i8 1)))]>;
+def : Semantics<SHL16r1, [(set (i16 GR16:$dst), (shl (i16 GR16:$src1), (i8 1)))]>;
+def : Semantics<SHL32r1, [(set (i32 GR32:$dst), (shl (i32 GR32:$src1), (i8 1)))]>;
+def : Semantics<SHL64r1, [(set (i64 GR64:$dst), (shl (i64 GR64:$src1), (i8 1)))]>;
+
 def : Sema_F<CMP8i8,   (set EFLAGS, (X86cmp AL,  i8 :$src))>;
 def : Sema_F<CMP16i16, (set EFLAGS, (X86cmp AX,  i16:$src))>;
 def : Sema_F<CMP32i32, (set EFLAGS, (X86cmp EAX, i32:$src))>;
